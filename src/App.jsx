@@ -1,34 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import Footer from "./components/Footer";
 
 const App = () => {
-  const [username, setUsername] = useState("");
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log(username);
-    setUsername("");
-  };
   return (
-    <div>
-      <form
-        onSubmit={(e) => {
-          submitHandler(e);
-        }}
-      >
-        <input
-          value={username}
-          onChange={(e) => {
-            setUsername(e.target.value);
-          }}
-          className="px-3 py-4 text-xl m-5 rounded  bg-blue-50 outline-blue-300"
-          type="text"
-          placeholder="Enter Your name"
-        ></input>
-        <button className="px-6 py-3 ml-9 text-xl  rounded   bg-emerald-700 font-semibold">
-          Submit
-        </button>
-      </form>
-    </div>
+    <>
+      <Footer />
+
+      <nav className="bg-emerald-600  flex py-5 px-10 items-center justify-between">
+        <h2 className="text-2xl">Shukla</h2>
+        <div className="flex gap-8 items-center">
+          <h4 className="text-xl">About</h4>
+          <h4 className="text-xl">Contact</h4>
+          <h4 className="text-xl">Services</h4>
+          <h4 className="text-xl">Account</h4>
+        </div>
+      </nav>
+    </>
   );
 };
 export default App;
